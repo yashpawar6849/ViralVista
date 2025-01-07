@@ -1,6 +1,7 @@
 import streamlit as st
 from flow_runner import run_flow
 import json
+import os
 
 st.title("ViralVista: Unveiling the Trends, Amplifying Your Reach")
 st.markdown(
@@ -12,8 +13,8 @@ social media posts (e.g., carousels, reels, and static images).
 """
 )
 
-endpoint = "bcfdcf2d-e7bf-4799-84e9-bf845130ea4f"
-application_token = "AstraCS:kuRmkaaOsnnRUzhEtUPfkGFG:1c5dfe39993819e201266199d9cfb71a490f236a36fdac7792604e144f8c11b0"
+endpoint = os.getenv("ASTRA_ENDPOINT", "default_endpoint")
+application_token = os.getenv("ASTRA_APPLICATION_TOKEN", "default_token")
 output_type = "chat"
 input_type = "chat"
 
